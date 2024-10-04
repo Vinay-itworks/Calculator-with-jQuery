@@ -1,0 +1,54 @@
+div.operation, div.solution {
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-right: 1.8vw;
+}
+div.operation {
+  height: 35vh;
+  width: 98%;
+  background-color: #ffb6c1;
+}
+div.solution {
+  height: 10vh;
+  width: 98%;
+  background-color: lightgoldenrodyellow;
+}
+table {
+  border-radius: 5px;
+  background-color: grey;
+}
+td {
+  height: 10vh;
+  width: 20vw;
+  border-radius: 10px;
+  text-align: center;
+  background-color: lightblue;
+}
+.number {
+  background-color: lightgray;
+}
+.operator {
+  background-color: lightgreen;
+}
+
+#slider {
+  padding: 2px;
+  text-align: center;
+  width: auto;
+  height: auto;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+#history {
+  padding: 5px;
+  text-align: left;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+  display: none;
+  max-height: 10vh;
+  overflow-y: scroll;
+}
