@@ -1,6 +1,17 @@
 var solution = ""
 var history = ""
 $(document).ready(function(){
+  $("#slider").click(function(){
+    $("#history").slideToggle();
+  });
+
+  $("td").hover(function(){
+      this.style.boxShadow = "5px 5px 5px black, 0 0 5px black, 0 0 5px black";
+    },
+    function(){
+      this.style.boxShadow = "";
+    }
+  );
   $("td").click(function(){
     object = $(this)[0];
     if (object.innerHTML == "="){
@@ -35,16 +46,3 @@ $(document).ready(function(){
   });
 });
 
-
-// Slide
-$(document).ready(function(){
-  $("#slider").click(function(){
-    if ($("#history")[0].style.display == "none"){
-      $("history").slideDown();
-    } else if ($("#history")[0].style.display == "block"){
-      $("history").slideUp();
-   }
-    
-    $("#history").slideToggle(500);
-  });
-});
