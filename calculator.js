@@ -13,31 +13,33 @@ $(document).ready(function(){
     }
   );
   $("td").click(function(){
-    object = $(this)[0];
-    if (object.innerHTML == "="){
+    object = $(this);
+    if (object.html() == "="){
+    	console.log("Enter with "+ solution);
       try {
-        var answer = eval(solution)
+      	
+        var answer = eval(solution);
         if (answer % 1 != 0){answer = answer.toFixed(2)}
-        $("#solution")[0].innerHTML = answer;
-        $("#history")[0].innerHTML += $("#operation")[0].innerHTML + 
-          " = " + answer + 
-          "<br/>";
+        console.log(answer);
+        $("#solution").html(answer);
+        $("#history").html($("#history").html() + $("#operation")[0].innerHTML + 
+          " = " + answer + "<br/>");
       }
       catch(err) {
         console.log(err.message);
-        $("#solution")[0].innerHTML = "Give proper values";
+        $("#solution").html("Give proper values");
       }
       
-    } else if (object.innerHTML == "C"){
-      $("#operation")[0].innerHTML = "";
+    } else if (object.html() == "C"){
+      $("#operation").html("");
       solution = "";
-      $("#solution")[0].innerHTML = 0;
+      $("#solution").html(0);
     } else{
       
-      if (object.className == "operator"){
-        $("#operation")[0].innerHTML += "&nbsp;" + this.innerText + "&nbsp;"
+      if (object.hasClass("operator")){
+        $("#operation").html($("#operation").html() + "&nbsp;" + this.innerText + "&nbsp;")
       } else {
-        $("#operation")[0].innerHTML += this.innerText;
+        $("#operation").html($("#operation").html() + this.innerText)
       }
       console.log(this.className);
       solution += this.id;
